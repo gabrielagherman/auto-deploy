@@ -23,7 +23,7 @@ resource "aws_subnet" "public_subnet" {
   vpc_id            = aws_vpc.app_vpc.id
   cidr_block        = var.public_subnet_cidr
   map_public_ip_on_launch = true
-  availability_zone = "us-west-2a"
+  availability_zone = "eu-central-1"
 
   tags = {
     Name = "public-subnet"
@@ -96,7 +96,7 @@ resource "aws_security_group" "sg" {
 
 #create EC2 instance
 resource "aws_instance" "web" {
-  ami             = "ami-005e54dee72cc1d00" 
+  ami             = "ami-0d1ddd83282187d18" 
   instance_type   = var.instance_type
   key_name        = var.instance_key
   subnet_id       = aws_subnet.public_subnet.id
