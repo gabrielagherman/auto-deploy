@@ -54,7 +54,6 @@ resource "aws_instance" "web" {
   ami             = "ami-0d1ddd83282187d18" 
   instance_type   = var.instance_type
   key_name        = var.instance_key
-  subnet_id       = aws_subnet.public_subnet.id
   security_groups = [aws_security_group.sg.id]
 
   tags = {
