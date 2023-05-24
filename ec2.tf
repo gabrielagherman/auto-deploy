@@ -51,12 +51,12 @@ resource "aws_security_group" "sg" {
 
 #create EC2 instance
 resource "aws_instance" "web" {
-  ami             = "ami-0d1ddd83282187d18" 
+  ami             = "ami-04e601abe3e1a910f" 
   instance_type   = var.instance_type
   key_name        = var.instance_key
   security_groups = [aws_security_group.sg.id]
 
   tags = {
-    Name = "TomcatServer"
+    Name = "App-target"
   }
 }
